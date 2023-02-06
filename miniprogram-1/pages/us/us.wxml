@@ -1,0 +1,6 @@
+<!--pages/us/us.wxml-->
+<view class="container">
+  <text class="introduction">“简易记账本1.0”是一款基于互联网的个人账目管理系统微信小程序，该旨在为个人用户提供一种全新的，实用的，便捷的，适合互联网时代的个人账目管理系统。</text>
+</view>
+ 
+

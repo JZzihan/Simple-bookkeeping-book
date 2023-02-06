@@ -1,0 +1,22 @@
+<!--pages/settings/settings.wxml-->
+<van-cell
+  wx:if="{{!noLogin}}"
+  is-link
+  title="绑定手机号"
+  size="large"
+  border="{{ true }}"
+  link-type="navigateTo"
+  url="/pages/phone/phone"
+/>
+<van-cell
+  wx:if="{{!noLogin}}"
+  is-link
+  title="关于我们"
+  size="large"
+  border="{{ true }}"
+  link-type="navigateTo"
+  url="/pages/us/us"
+/>
+<button wx:if="{{!noLogin}}" class="button" type="warn" size="large" bindtap="loginOut">退出登录</button>
+
+

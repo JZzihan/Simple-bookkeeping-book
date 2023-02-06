@@ -1,0 +1,37 @@
+/* pages/phone/phone.wxss */
+.container { 
+  margin-top: 80px;
+  display: flex;  
+  flex-direction: column; 
+  padding: 0; 
+ } 
+ .inputView { 
+  line-height: 45px; 
+  border-bottom:1px solid #999999;
+ } 
+.title{
+  width: 80%;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+ .inputText { 
+  display: inline-block; 
+  line-height: 45px; 
+  padding-left: 10px; 
+  margin-top: 11px;
+  color: #0c0b0b; 
+  font-size: 20px;
+ } 
+ 
+ .line {
+  border: 1px solid #1aad19;
+  border-radius: 20px; 
+  float: right; 
+  margin-top: 9px;
+  color: #1aad19;
+ } 
+ .loginBtn { 
+  margin-top: 40px; 
+  border-radius:10px;
+ }

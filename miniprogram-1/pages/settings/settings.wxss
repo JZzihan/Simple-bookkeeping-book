@@ -1,0 +1,7 @@
+/* pages/settings/settings.wxss */
+.button {
+  margin-top: 60rpx;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+  border-radius:10px;
+}
