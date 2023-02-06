@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/test/test",
+    "pages/bookkeeping/bookkeeping",
+    "pages/ledger/ledger",
+    "pages/wode/wode",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#F8B865",
+    "navigationBarTitleText": "TEST",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+      "selectedColor": "ffd900",
+      "backgroundColor": "#F8B865",
+      "list": [
+          {
+            "iconPath": "images/list1.png",
+            "selectedIconPath": "images/list2.png",
+            "pagePath": "pages/ledger/ledger",
+            "text": "明细"
+          },
+          {
+            "iconPath": "images/plus1.png",
+            "selectedIconPath": "images/plus2.png",
+            "pagePath": "pages/bookkeeping/bookkeeping",
+            "text": "记账"
+          },
+          {
+            "iconPath": "images/wode1.png",
+            "selectedIconPath": "images/wode2.png",
+            "pagePath": "pages/test/test",
+            "text": "我的"
+          }
+      ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+   "van-cell": "@vant/weapp/cell/index",
+   "van-cell-group": "@vant/weapp/cell-group/index",
+   "van-calendar": "@vant/weapp/calendar/index",
+   "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+   "van-popup": "@vant/weapp/popup/index",
+   "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+  }
+}

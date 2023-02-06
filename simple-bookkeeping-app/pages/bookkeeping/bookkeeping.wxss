@@ -1,0 +1,80 @@
+/* pages/bookkeeping/bookkeeping.wxss */
+.inout{
+   background-color: yellow;
+   height: 100rpx;
+   text-align: center;
+}
+.inout button{
+   background-color: yellow;
+   border-radius: 20rpx;
+   text-align: center;
+   display: inline;
+   line-height: 100rpx;
+   padding: 15rpx 80rpx;
+   margin: 5%;
+}
+.input{
+   font-size: 100rpx;
+}
+.slice{
+   height: 30rpx;
+   background-color: rgb(212, 212, 212);
+}
+.icon-line{
+   display: flex;
+   justify-content: space-around;
+}
+.icon-line view{
+   width: 25%;
+   height: 187.5rpx;
+   border: 1rpx solid rgb(73, 73, 73);
+   text-align: center; /*左右center text*/
+   line-height: 187.5rpx; /*上下center text*/
+   background-color: rgb(240, 240, 240);
+}
+.conculator view{
+   padding: 8rpx;
+}
+.type{
+   text-align: center;
+   line-height: 25rpx;
+   display: block;
+}
+image{
+   width: 70%;
+   height: 70%;
+   flex-direction: column;
+   padding: 10rpx;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+.notes{
+   display: flex;
+   padding: 10rpx;
+}
+.notes text{
+   font-size: x-large;
+   font-weight: bold;
+   line-height: 100rpx;
+   padding: 5rpx;
+}
+textarea{
+   border: 1rpx solid black;
+   width: 85%;
+   height: 100rpx;
+   border-radius: 20rpx;
+}
+.btn button{
+   width: 150rpx;
+   height: 110rpx;
+   text-align: center; /*左右center text*/
+   line-height: 110rpx; /*上下center text*/
+   background-color: rgb(231, 231, 231);
+   font-size: 40rpx;
+   box-shadow: 2rpx 2rpx 5rpx #aaa;
+}
+.btn{
+   display: flex; /*浮动, 向右排列*/
+   justify-content: space-around; /*平均分配*/
+}

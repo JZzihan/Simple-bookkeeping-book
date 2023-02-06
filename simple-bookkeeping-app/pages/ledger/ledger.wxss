@@ -1,0 +1,116 @@
+/* pages/ledger/ledger.wxss */
+.top{
+   display: flex;
+   background-color: yellow;
+}
+.texts{
+   width: 70%;
+   display: flex;
+   flex-direction: column;
+   font-size: x-large;
+}
+.top-money{
+   color:rgb(119, 119, 119);
+}
+.conclusion{
+   font-size: 60rpx;
+}
+.conclusion-money{
+   font-size: 60rpx;
+   color: rgb(255, 43, 43);
+}
+.top image{
+   height: 250rpx;
+   width: 290rpx;
+   display: block;
+   padding: 20rpx;
+}
+.date{
+   display: flex;
+   height: 40rpx;
+}
+.date view{
+   padding-left: 30rpx;
+   height: 30rpx;
+}
+.date button{
+   background-color: orange;
+   text-align: center;
+   font-size: 30rpx;
+   line-height: 40rpx;
+   height: 40rpx;
+   font-weight: bold;
+   color: white;
+}
+.test{
+   background-color: pink;
+   display: flex;
+   flex-direction: column;
+   height: 500rpx;
+}
+.test van-cell{
+   width: 60%;
+}
+.record{
+   border: 1rpx solid rgb(0, 0, 0);
+   height: 130rpx;
+   display: flex;
+}
+.icon{
+   padding-top: 15rpx;
+   padding-left: 10rpx;
+   width: 100rpx;
+   height: 100rpx;
+}
+.edit{
+   width: 15%;
+   height: 25%;
+}
+.left{
+   height: 130rpx;
+   width: 28%;
+}
+.left text{
+   float: right;
+   padding-right: 10rpx;
+   line-height: 130rpx;
+   font-size: 40rpx;
+}
+textarea{
+   height: 90rpx;
+   width: 37%;
+   font-size: 25rpx;
+   background-color: rgb(240, 240, 240);
+   color: rgb(110, 110, 110);
+   padding: 10rpx;
+   border: 1rpx solid black;
+   border-radius: 20rpx;
+   margin-top: auto;
+   margin-bottom: auto;
+}
+.right{
+   height: 130rpx;
+   width: 33%;
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   right: 0px;
+   text-align: right;
+}
+.right image{
+   position: absolute;
+   right: 0px;
+}
+.detail{
+   margin-top: 30rpx;
+   margin-right: 5rpx;
+   font-size: 45rpx;
+   font-weight: bold;
+}
+.time{
+   color: rgb(99, 99, 99);
+   margin-right: 10rpx;
+}
+
+
+

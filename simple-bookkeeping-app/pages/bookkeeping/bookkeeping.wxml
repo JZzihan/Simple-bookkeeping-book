@@ -1,0 +1,59 @@
+<!--pages/bookkeeping/bookkeeping.wxml-->
+<view class="inout">
+   <button class="in" style="background-color: rgb(166, 241, 52);" bindtap="in">收入</button>
+   <button class="out" style="background-color:rgb(238, 97, 97);" bindtap="out">支出</button>
+</view>
+<view class="input">
+   <text style="color:rgb{{bill.income}};">{{bill.money}}</text>
+</view>
+<view class="slice"></view>
+<view class="icons">
+   <view class="icon-line">
+      <view wx:for="{{icons.a}}" wx:key="index">
+         <image src="{{item}}" bindtap="iconclick" data-type="{{index}}"></image>
+         <text class="type">{{index}}</text>
+      </view>
+   </view>
+   <view class="icon-line">
+      <view wx:for="{{icons.b}}" wx:key="index">
+         <image src="{{item}}" bindtap="iconclick" data-type="{{index}}"></image>
+         <text class="type">{{index}}</text>
+      </view>
+   </view>
+</view>
+<view class="slice"></view>
+<view class="notes">
+   <text>备注</text>
+   <textarea 
+   placeholder="字数上限为50字" 
+   maxlength="{{50}}" 
+   bindblur="textinput" 
+   style="color: rgb(110, 110, 110);"
+   value="{{text}}"
+   >
+   </textarea>
+</view>
+<view class="conculator">
+   <view class="btn">
+      <button wx:for="{{conculator.a}}" wx:key="index" bindtap="{{item}}" data-input="{{index}}">{{index}}</button>
+   </view>
+   <view class="btn">
+      <button wx:for="{{conculator.b}}" wx:key="index" bindtap="{{item}}" data-input="{{index}}">{{index}}</button>
+   </view>
+   <view class="btn">
+      <button wx:for="{{conculator.c}}" wx:key="index" bindtap="{{item}}" data-input="{{index}}">{{index}}</button>
+   </view>
+   <view class="btn">
+      <button wx:for="{{conculator.d}}" wx:key="index" bindtap="{{item}}" data-input="{{index}}">{{index}}</button>
+   </view>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+   <van-datetime-picker
+  type="datetime"
+  value="{{ currentDate }}"
+  bind:input="onInput"
+  bind:confirm="onConfirm"
+  title="选择年/月/日/时/分"
+   />
+</van-popup>
+<van-dialog id="van-dialog" />
