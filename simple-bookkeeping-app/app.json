@@ -1,21 +1,27 @@
 {
   "pages":[
+    "pages/mine/mine",
     "pages/test/test",
     "pages/bookkeeping/bookkeeping",
     "pages/ledger/ledger",
-    "pages/wode/wode",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/feedback/feedback",
+    "pages/phone/phone",
+    "pages/us/us",
+    "pages/settings/settings"
   ],
   "window":{
-    "backgroundTextStyle":"dark",
-    "navigationBarBackgroundColor": "#F8B865",
-    "navigationBarTitleText": "TEST",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f8b865",
+    "navigationBarTitleText": "简易记账本",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+      "color": "#6D000E",
       "selectedColor": "ffd900",
       "backgroundColor": "#F8B865",
+      "borderStyle": "black",
       "list": [
           {
             "iconPath": "images/list1.png",
@@ -32,7 +38,7 @@
           {
             "iconPath": "images/wode1.png",
             "selectedIconPath": "images/wode2.png",
-            "pagePath": "pages/test/test",
+            "pagePath": "pages/mine/mine",
             "text": "我的"
           }
       ]
@@ -44,6 +50,10 @@
    "van-calendar": "@vant/weapp/calendar/index",
    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
    "van-popup": "@vant/weapp/popup/index",
-   "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+   "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index",
+   "van-button": "miniprogram_npm/@vant/weapp/button/index",
+  "van-icon": "miniprogram_npm/@vant/weapp/icon/index",
+  "van-field": "miniprogram_npm/@vant/weapp/field/index"
   }
+  
 }

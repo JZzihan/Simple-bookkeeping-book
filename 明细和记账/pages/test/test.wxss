@@ -1,0 +1,21 @@
+/* pages/test/test.wxss */
+.conculator view{
+   padding: 5px;
+}
+.conculator{
+   border: 2px solid red;
+   height: 120px;
+   width: 400px;
+}
+.nums view{
+   width: 100px;
+   height: 100px;
+   text-align: center; /*左右center text*/
+   line-height: 100px; /*上下center text*/
+   border-radius: 10px; /*圆角*/
+   background-color: gray;
+}
+.nums{
+   display: flex; /*浮动, 向右排列*/
+   justify-content: space-around; /*平均分配*/
+}

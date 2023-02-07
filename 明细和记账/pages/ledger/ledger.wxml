@@ -1,0 +1,45 @@
+<!--pages/ledger/ledger.wxml-->
+<view class="top">
+   <view class="texts">
+      <text 
+      style="font-size: xx-large; font-weight: bold; border: 1rpx solid black; margin: 8rpx;" bindtap="onDisplay">🔽 {{showDate}}
+      </text>
+      <view class="date">
+         <view><button bindtap="filter" data-range="年">年</button></view>
+         <view><button bindtap="filter" data-range="月">月</button></view>
+         <view><button bindtap="filter" data-range="日">日</button></view>
+      </view>
+      <view>
+         <text class="conclusion">结余：</text><text class="conclusion-money">￥{{total}}</text>
+      </view>
+      <view>
+         <text>收入：</text><text class="top-money">￥{{total_in}}</text>
+      </view>
+      <view>
+         <text>支出：</text><text class="top-money">￥{{total_out}}</text>
+      </view>
+   </view>
+   <image src="../../images/money.png"></image>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+   <van-datetime-picker
+   type="date"
+   value="{{ currentDate }}"
+   bind:input="onInput"
+   formatter="{{ formatter }}"
+   bind:confirm="onConfirm"
+   bind:cancel="onClose"
+   />
+</van-popup>
+<view class="record" wx:for="{{showbills}}" wx:key="index">
+   <view class="left">
+      <image src="{{showbills[index].icon}}" class="icon"></image>
+      <text>{{showbills[index].type}}</text>
+   </view>
+   <textarea value="{{showbills[index].notes}}" disabled></textarea>
+   <view class="right">
+      <image src="../../images/delete.png" class="edit" bindtap="edit" data-index="{{index}}"></image>
+      <text class="detail" style="color:rgb{{showbills[index].income}};">￥{{showbills[index].money}}</text>
+      <text class="time">{{showbills[index].timetext}}</text>
+   </view>
+</view>

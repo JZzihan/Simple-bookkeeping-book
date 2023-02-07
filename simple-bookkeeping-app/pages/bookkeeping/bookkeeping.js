@@ -264,26 +264,23 @@ Page({
       var str = bill.money
       if (str[str.length-1] == "+" || str[str.length-1] == "-" || str[str.length-1] == "."){
          str = str.substr(0,str.length-1)
-         this.setData({
-            [`bill.money`]: str
-         })
+         bill.money = str
       }
       if (str.includes('+')){
          var nums = str.split('+')
-         this.setData({
-            [`bill.money`]: `${parseFloat(nums[0])+parseFloat(nums[1])}`
-         })
+         bill.money = parseFloat(nums[0])+parseFloat(nums[1])
       }else if (str.includes('-')){
          var nums = str.split('-')
          var result = nums[0]-nums[1]
          if (result < 0){
             result = Math.abs(result)
-            if (this.data.bill.income == "(238, 97, 97)"){
-               this.setData({[`bill.income`]: "(166, 241, 52)"})
-            }else this.setData({[`bill.income`]: "(238, 97, 97)"})
+            if (bill.income == "(238, 97, 97)"){
+              bill.income = "(166, 241, 52)"
+            }else bill.income = "(238, 97, 97)"
          }
-         this.setData({  [`bill.money`]: `${result}` })
+         bill.money = result
       }
+      bill.money = Math.round(bill.money*100)/100 //小数点2位
       // money
       if (bill.income=="(166, 241, 52)") income = "收入" //income?
       datetext = `${bill.date.year}年${bill.date.month}月${bill.date.day}日${bill.date.hour}时${bill.date.mintue}分`
@@ -293,7 +290,7 @@ Page({
          title: '账单',
          message: `种类：${bill.type}
          收入/支出：${income}
-         钱款：${this.data.bill.money}
+         钱款：${bill.money}
          时间：${datetext}
          备注：${bill.notes}`,
        }).then(() => {
@@ -302,7 +299,6 @@ Page({
              app.globalData.bills.push(bill)
             //  app.APIaddbill(139183289, bill)
             //  app.promiseAPIaddbill(139183289, bill)
-            console.log("bill.money", bill.money)
              this.reset()
              console.log('用户点击确定')
          })

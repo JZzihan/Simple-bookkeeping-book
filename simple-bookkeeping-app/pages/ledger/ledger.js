@@ -65,8 +65,9 @@ Page({
                this.setData({
                   bills: app.globalData.bills,
                })
-               this.resetmoney()
-               console.log("delete ledger.bills", this.data.bills)
+               this.filter("日")
+               console.log("delete global.bills", app.globalData.bills)
+               console.log("delete ledger.showbills", this.data.showbills)
              console.log('用户点击确认')
            } else if (res.cancel) {
              console.log('用户点击取消')
@@ -86,7 +87,7 @@ Page({
       this.setData({
          total_in: income,
          total_out: expend,
-         total: income - expend
+         total: Math.round((income - expend)*100)/100
       })
     },
     checkdate(range){
@@ -148,8 +149,7 @@ Page({
     * 生命周期函数--监听页面初次渲染完成
     */
    onReady() {
-      
-      console.log("onReady")
+
    },
 
    /**
@@ -161,7 +161,9 @@ Page({
          bills: app.globalData.bills,
          showbills: app.globalData.bills,
       })
-      if (this.data.date == '') this.setData({ date: this.formatDate(this.data.currentDate) })
+      if (this.data.date == ''){
+        this.setData({ date: this.formatDate(this.data.currentDate) })
+      }
       this.filter("日")
       console.log("bills", this.data.bills)
       console.log("showbills", this.data.showbills)

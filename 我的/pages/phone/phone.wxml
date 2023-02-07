@@ -1,0 +1,16 @@
+<!--pages/logins/logins.wxml-->
+<view class="container">
+  <view class="title">手机号绑定</view>
+  <form catchsubmit="login">
+    <view class="inputView">
+      <input class="inputText" placeholder="请输入手机号" name="phone" bindinput="phone" />
+    </view>
+    <view class="inputView">
+      <input class="inputText" placeholder="请输入验证码" name="code" />
+      <button class="line"  size="mini" bindtap="sendcode">{{codebtn}}</button>
+    </view>
+    <view class="loginBtnView">
+      <button class="loginBtn" type="primary" formType="submit">登录</button>
+    </view>
+  </form>
+</view>

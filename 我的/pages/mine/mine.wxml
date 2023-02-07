@@ -1,0 +1,54 @@
+<!-- <view class="weidenglu">
+  <image wx:if="{{noLogin}}" src="/images/07.png" />
+  <text wx:if="{{noLogin}}" class="nickName">未登录</text>
+</view> -->
+<!-- 两种方式登录按钮 -->
+<!-- <button wx:if="{{noLogin}}" class="button" type="primary" size="large" bindtap="login">微信授权登录</button>
+<button wx:if="{{noLogin}}" class="button" size="large" bindtap="AccountLogin">其他方式登录</button> -->
+<!-- 显示登录后的头像和昵称 -->
+<!-- <view class="root">
+  <image class="avatar" src="{{avatar}}" mode=""/>
+  <text class="nickName">{{nickName}}</text>
+</view> -->
+<!-- 设置和意见反馈 -->
+<!-- <view class="user">
+  <van-cell
+  wx:if="{{!noLogin}}"
+  is-link
+  title="设置"
+  icon="setting-o"
+  size="large"
+  border="{{ true }}"
+  link-type="navigateTo"
+  url="/pages/settings/settings"
+/>
+<van-cell
+  wx:if="{{!noLogin}}"
+  is-link
+  title="意见反馈"
+  icon="comment-o"
+  size="large"
+  border="{{ true }}"
+  link-type="navigateTo"
+  url="/pages/feedback/feedback"
+/>
+</view> -->
+<!-- 账号密码登录 -->
+<view class="weidenglu">
+  <image src="/images/07.png" />
+  <text class="nickName">未登录</text>
+</view>
+<!-- vant组件输入用户名和密码 -->
+<view class="container">
+  <van-cell-group>
+    <van-field value="{{ username }}" required clearable label="用户名" placeholder="请输入用户名" bind:change="getAccount" />
+    <van-field value="{{ password }}" type="password" label="密码" placeholder="请输入密码" required border="{{ false }}" bind:change="getPassword" />
+  </van-cell-group>
+</view>
+<!-- 登录按钮 -->
+<button class="button" type="primary" bindtap="login">登录</button>
+<!-- 设置和意见反馈 -->
+<view class="user">
+  <van-cell is-link title="设置" icon="setting-o" size="large" border="{{ true }}" link-type="navigateTo" url="/pages/settings/settings" />
+  <van-cell is-link title="意见反馈" icon="comment-o" size="large" border="{{ true }}" link-type="navigateTo" url="/pages/feedback/feedback" />
+</view>
