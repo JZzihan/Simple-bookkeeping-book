@@ -53,6 +53,7 @@
   value="{{ currentDate }}"
   bind:input="onInput"
   bind:confirm="onConfirm"
+  bind:cancel="onClose"
   title="选择年/月/日/时/分"
    />
 </van-popup>

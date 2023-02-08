@@ -5,6 +5,7 @@ Page({
     * 页面的初始数据
     */
    data: {
+      range: "day",
       date: '',
       showDate: '',
       total_in: 0,
@@ -40,16 +41,14 @@ Page({
     },
     formatDate(date) {
       date = new Date(date);
-      var year = 2013 + Math.floor((date.getTime()-1359129600000)/31536000000);
-      var arrayDate = [year, date.getMonth() + 1, date.getDate()]
-      return arrayDate;
+      return [date.getFullYear() ,date.getMonth() + 1 ,date.getDate()];
     },
     onConfirm(event) {
       this.setData({
         show: false,
         date: this.formatDate(event.detail),
       });
-      this.filter("日")
+      this.filter(this.data.range)
     },
     edit(e){
       var index = e.target.dataset.index
@@ -65,7 +64,7 @@ Page({
                this.setData({
                   bills: app.globalData.bills,
                })
-               this.filter("日")
+               this.filter(this.data.range)
                console.log("delete global.bills", app.globalData.bills)
                console.log("delete ledger.showbills", this.data.showbills)
              console.log('用户点击确认')
@@ -91,7 +90,7 @@ Page({
       })
     },
     checkdate(range){
-      //range = "年" / "月" / "日"
+      //range = "year" / "month" / "day"
       this.setData({
          showbills: {} //empty
       })
@@ -99,23 +98,28 @@ Page({
       for (var item in this.data.bills){
          var index = this.data.bills[item]
          if (index.date.year == date[0]){ //year check
-            if (index.date.month == date[1] || range == "年"){ //month check
-               if (index.date.day == date[2] || range != "日") this.setData({ [`showbills.${item}`]: index })
+            if (index.date.month == date[1] || range == "year"){ //month check
+               if (index.date.day == date[2] || range != "day") this.setData({ [`showbills.${item}`]: index })
                //all passed, then add
             }
          }
       }
-      console.log("result", this.data.showbills)
+      console.log("checkdate showbills", this.data.showbills)
     },
     filter(e){
        var range
-       if (typeof(e) == 'string'){
-          range = e
-       }else range = e.target.dataset.range
+       if (typeof(e) == 'string'){ //被调用
+          range = e 
+       }else{
+         //按钮触发
+         range = e.target.dataset.range
+         this.setData({ range: e.target.dataset.range})
+         console.log(this.data.range)
+       }
        var date = this.data.date
-       if (range == "年"){
+       if (range == "year"){
           this.setData({ showDate: date[0]})
-       }else if (range == "月"){
+       }else if (range == "month"){
          this.setData({ showDate: date[0] + '/' + date[1]})
        }else 
          this.setData({ showDate: date[0] + '/' + date[1] + '/' + date[2]})
@@ -126,9 +130,9 @@ Page({
     timetext(range){
       for (var item in this.data.showbills){
          var index = this.data.showbills[item]
-         if (range == "年"){
+         if (range == "year"){
             this.setData({ [`showbills.${item}.timetext`]: index.date.month + "月" +index.date.day + "日"})
-         }else if (range == "月"){
+         }else if (range == "month"){
            this.setData({ [`showbills.${item}.timetext`]: index.date.day + "日"})
          }else{
             var mintuetext = index.date.mintue
@@ -162,11 +166,13 @@ Page({
          showbills: app.globalData.bills,
       })
       if (this.data.date == ''){
+        console.log("first")
         this.setData({ date: this.formatDate(this.data.currentDate) })
       }
-      this.filter("日")
-      console.log("bills", this.data.bills)
-      console.log("showbills", this.data.showbills)
+      console.log(this.data.range)
+      this.filter(this.data.range)
+      console.log("onShow bills", this.data.bills)
+      console.log("onShow showbills", this.data.showbills)
    },
 
    /**

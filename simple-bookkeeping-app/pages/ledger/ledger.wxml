@@ -5,9 +5,9 @@
       style="font-size: xx-large; font-weight: bold; border: 1rpx solid black; margin: 8rpx;" bindtap="onDisplay">🔽 {{showDate}}
       </text>
       <view class="date">
-         <view><button bindtap="filter" data-range="年">年</button></view>
-         <view><button bindtap="filter" data-range="月">月</button></view>
-         <view><button bindtap="filter" data-range="日">日</button></view>
+         <view><button bindtap="filter" data-range="year">年</button></view>
+         <view><button bindtap="filter" data-range="month">月</button></view>
+         <view><button bindtap="filter" data-range="day">日</button></view>
       </view>
       <view>
          <text class="conclusion">结余：</text><text class="conclusion-money">￥{{total}}</text>

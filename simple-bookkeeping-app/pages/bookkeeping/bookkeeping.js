@@ -91,14 +91,7 @@ Page({
     },
     formatDate(date) {
       date = new Date(date);
-      //1year = 31536000000
-      //1day = 86400000
-      var mintues =  Math.floor(((date.getTime()%86400000)/60000)-960)
-      if (mintues < 0) mintues += 1440 //7hour = 420, 8hour = -960, 23hour = -60
-      var hours = Math.floor(mintues/60)
-      mintues %= 60
-      var year = 2013 + Math.floor((date.getTime()-1359129600000)/31536000000);
-      var arraydate = [`${year}`,`${date.getMonth() + 1}`,`${date.getDate()}`,`${hours}`,`${mintues}`]
+      var arraydate = [date.getFullYear() ,date.getMonth()+1 ,date.getDate() ,date.getHours(), date.getMinutes()]
       return arraydate;
     },
 
