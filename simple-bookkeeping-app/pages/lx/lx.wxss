@@ -1,0 +1,9 @@
+.lx {
+  width: 750rpx;
+  height: 200rpx;
+  font-size: 28rpx;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

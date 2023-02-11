@@ -1,0 +1,38 @@
+<view class="login">
+  <view class="title">简易记账本</view>
+  <view class="container">
+    <view class="top">
+    <!-- 输入用户名 -->
+      <view class="input">
+        <van-icon
+          slot="left-icon"
+          size="21px"
+          name="contact"
+          class="icon"
+        />
+        <!-- <van-cell-group> -->
+        <input bindinput="getUser" placeholder="请输入用户名" />
+        <!-- </van-cell-group> -->
+      </view>
+      <!-- 密码 -->
+      <view class="input">
+        <van-icon
+          slot="left-icon"
+          size="21px"
+          name="bag-o"
+          class="icon"
+        />
+        <!-- <van-cell-group> -->
+        <input
+          type="password"
+          bindinput="getPaw"
+          placeholder="请输入密码"
+        />
+        <!-- </van-cell-group> -->
+      </view>
+    </view>
+    <view class="singin" bind:tap="goRegister">快速注册</view>
+    <view class="btn" bind:tap="login">登 录</view>
+  </view>
+</view>
+

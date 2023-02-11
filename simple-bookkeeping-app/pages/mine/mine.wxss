@@ -1,4 +1,4 @@
-image {
+/* image {
   width: 200rpx;
   height: 200rpx;
   border-radius: 50%;
@@ -72,4 +72,81 @@ image {
 .input {
   border: 1px solid gainsboro;
   margin: 20rpx;
+} */
+
+
+.my {
+  width: 750rpx;
+  height: 100vh;
+}
+.my .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 520rpx;
+  background-color: #f8b865;
+  color: black;
+}
+.my .banner .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+  width: 100%;
+  height: 210rpx;
+}
+.my .banner .login .no_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  height: 150rpx;
+  background-color: #ededed;
+  border-radius: 100rpx;
+}
+.my .banner .login .no_login image {
+  width: 100%;
+  height: 100%;
+  border-radius: 300rpx;
+}
+.my .banner .login .btn {
+  width: 100%;
+  margin-top: 10rpx;
+  color: white;
+  text-align: center;
+  font-size: 32rpx;
+}
+.my .tab {
+  width: 690rpx;
+  font-size: 32rpx;
+}
+.my .tab .tab-item1 {
+  border-top: 1px solid #EEEEEE;
+}
+.my .tab .tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px solid #EEEEEE;
+}
+.my .tab .tab-item .left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.my .tab .tab-item .left image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.my .tab .tab-item .left .text {
+  margin-left: 12rpx;
+  font-size: 36rpx;
+}
+.my .tab .tab-item image {
+  width: 36rpx;
+  height: 36rpx;
 }
