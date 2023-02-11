@@ -290,7 +290,7 @@ Page({
            // on confirm
            const app = getApp()
              app.globalData.bills.push(bill)
-            //  app.APIaddbill(139183289, bill)
+             app.APIupdatebill(12345678901)
             //  app.promiseAPIaddbill(139183289, bill)
              this.reset()
              console.log('用户点击确定')

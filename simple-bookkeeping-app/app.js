@@ -20,23 +20,42 @@ App({
   globalData: {
     userInfo: null,
     bills: [],
-    baseURL: "https://www.escook.cn/api/"
-   },
-
+    baseURL: "http://127.0.0.1:5000/"
+  },
+  
    //normal
-   APIaddbill(userid, bill){
+   APIupdatebill(userid){
+     var bills = this.globalData.bills
       wx.request({
-        url: this.globalData.baseURL + "addbill",
-        method: "POST",
+        url: this.globalData.baseURL + "updatebill",
         data: {
            userid,
-           bill
+           bills
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
         },
         success:(res)=>{ console.log("normal", res) },
         fail:(res)=>{ console.log(res) }
       })
    },
-
+   APIgetbill(userid){
+     var that = this
+     wx.request({
+       url: this.globalData.baseURL + "getbill",
+       data: {
+          userid
+       },
+       header: {
+         'content-type': 'application/json' // 默认值
+       },
+       success:(res)=>{
+         this.globalData.bills = res.data
+         console.log("BILLS ", that.globalData.bills)
+        },
+       fail:(res)=>{ console.log(res) }
+     })
+  },
    //promise
    async promiseAPIaddbill(userid, bill){
       const res = await wx.p.request({

@@ -64,9 +64,9 @@ Page({
                this.setData({
                   bills: app.globalData.bills,
                })
+               app.APIupdatebill(12345678901)
                this.filter(this.data.range)
-               console.log("delete global.bills", app.globalData.bills)
-               console.log("delete ledger.showbills", this.data.showbills)
+               console.log("after delete global.bills", app.globalData.bills)
              console.log('用户点击确认')
            } else if (res.cancel) {
              console.log('用户点击取消')
@@ -161,6 +161,7 @@ Page({
     */
    onShow() {
       var app = getApp()
+      app.APIgetbill(12345678901)
       this.setData({
          bills: app.globalData.bills,
          showbills: app.globalData.bills,
