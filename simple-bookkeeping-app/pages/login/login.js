@@ -82,6 +82,8 @@ Page({
               content: "登录成功",
               showCancel:false,
               success:(res2)=> {
+                var app = getApp()
+                app.globalData.currentUser = res.data.data.tel
                 wx.setStorageSync('tel', res.data.data.tel)
                 wx.setStorageSync('info', res.data.data)
                 if (res2.confirm) {

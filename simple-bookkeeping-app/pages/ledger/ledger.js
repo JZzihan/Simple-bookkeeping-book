@@ -64,7 +64,7 @@ Page({
                this.setData({
                   bills: app.globalData.bills,
                })
-               app.APIupdatebill(12345678901)
+               app.APIupdatebill(app.globalData.currentUser)
                this.filter(this.data.range)
                console.log("after delete global.bills", app.globalData.bills)
              console.log('用户点击确认')
@@ -161,7 +161,7 @@ Page({
     */
    onShow() {
       var app = getApp()
-      app.APIgetbill(12345678901)
+      app.APIgetbill(app.globalData.currentUser)
       this.setData({
          bills: app.globalData.bills,
          showbills: app.globalData.bills,
