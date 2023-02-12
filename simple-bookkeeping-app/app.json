@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/mine/mine",
-    "pages/test/test",
     "pages/bookkeeping/bookkeeping",
     "pages/ledger/ledger",
     "pages/index/index",

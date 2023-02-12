@@ -114,7 +114,6 @@ Page({
          //按钮触发
          range = e.target.dataset.range
          this.setData({ range: e.target.dataset.range})
-         console.log(this.data.range)
        }
        var date = this.data.date
        if (range == "year"){
